@@ -1,0 +1,561 @@
+<!doctype html >
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<title>css 选择符</title>
+<style>
+*{margin:0;padding:0;font:14px/1.8em 'microsoft yahei';}
+body{padding:10px;}
+var {display:inline-block;vertical-align:middle;padding:0 12px;background:yellow;font-size: 14px;line-height:24px;}
+</style>
+</head>
+<body>
+
+
+
+
+<pre>
+<var>+</var> E:lang(c)  语言类型
+</pre>
+<style>
+.demo-0{border:1px solid black;padding:10px;}
+.demo-0:lang(zh-CN){color:red;}
+.demo-0:lang(C){color:green;}
+</style>
+<div class="demo-0" lang="zh-CN">
+  asd12321斯蒂芬森分，。、￥……@!*——  ,./'?']\)(*_^!%$#@#)
+</div>
+
+
+
+
+<pre>
+<var>IE7+</var> F>E 子级元素
+</pre>
+<style>
+.demo-2{border:1px solid black;padding:10px;}
+.demo-2 div{border:2px solid red;}
+.demo-2>div{border-color:blue;}
+</style>
+<div class="demo-2">
+  <div></div>
+  <div>
+    <div></div>
+  </div>
+  <div>
+    <div></div>
+  </div>
+  <div></div>
+</div>
+
+
+
+<pre>
+<var>IE7+</var> E+F  选择紧贴在E元素之后F元素 (同级相邻)
+</pre>
+<style>
+.demo-3{border:1px solid black;padding:10px;}
+.demo-3 li div{border:2px solid red;}
+.demo-3 li div+p{border:2px solid blue;padding:5px;}
+</style>
+<ol class="demo-3">
+  <li></li>
+  <li>
+    <div></div>
+    <p></p>
+    <p></p>
+  </li>
+  <li>
+    <div></div>
+    <p></p>
+  </li>
+  <li></li>
+</ol>
+
+
+
+<pre>
+<var>IE7+</var> E~F  选择E元素后面的所有兄弟元素F
+</pre>
+<style>
+.demo-4{border:1px solid black;padding:10px;}
+.demo-4 li:first-child div{border:2px solid red;}
+.demo-4 li:first-child div~p{border:2px solid blue;padding:5px;}
+</style>
+<ol class="demo-4">
+  <li>
+    <div></div>
+    <p></p>
+    <p></p>
+  </li>
+  <li>
+    <div></div>
+    <p></p>
+  </li>
+  <li></li>
+</ol>
+
+
+
+
+<pre>
+<var>IE7+</var> E[att]  选择具有att属性的E元素
+</pre>
+<style>
+.demo-5{border:1px solid black;padding:10px;}
+.demo-5 li{background:gray;border:1px solid #fff;}
+.demo-5 li[title]{background:#f90;}
+</style>
+<ol class="demo-5">
+	<li title="属性1"></li>
+	<li></li>
+	<li></li>
+</ol>
+
+
+
+<pre>
+<var>IE7+</var> E:first-child   匹配父元素的第一个子元素E。
+</pre>
+<style>
+.demo-14{border:1px solid black;padding:10px;}
+.demo-14 input{border-width:3px;outline: none;}
+.demo-14 input:first-child{border-color:#f00;}
+</style>
+<div class="demo-14">
+  <input type="text">
+  <input type="text">
+  <input type="text">
+</div>
+
+
+
+
+<pre>
+<var>IE7+</var> E::first-letter    设置对象内的第一个字符的样式。
+</pre>
+<style>
+.demo-29{border:1px solid black;padding:10px;}
+.demo-29:first-letter{background:#f90;font-size:30px;}
+</style>
+<div class="demo-29">
+  第一行<br/>第二行
+</div>
+
+
+
+
+
+
+<pre>
+<var>IE7+</var> E::first-line    设置对象内的第一个字符的样式。
+</pre>
+<style>
+.demo-30{border:1px solid black;padding:10px;}
+.demo-30:first-line{background:#f90;}
+</style>
+<div class="demo-30">
+  第一行<br/>第二行
+</div>
+
+
+
+<pre>
+<var>IE7+</var> E[att="val"]  选择具有att属性且属性值等于val的E元素
+</pre>
+<style>
+.demo-6{border:1px solid black;padding:10px;}
+.demo-6 li{background:#369;border:1px soild #fff;}
+.demo-6 li[class='list2']{background:#f90;}
+</style>
+<ol class="demo-6">
+	<li class="list1"></li>
+	<li class="list2"></li>
+	<li class="list2"></li>
+	<li></li>
+</ol>
+
+
+<pre>
+<var>IE7+</var> E[att~="val"]  选择具有att属性且属性值为一用空格分隔的字词列表，其中一个等于val的E元素。
+</pre>
+<style>
+.demo-7{border:1px solid black;padding:10px;}
+.demo-7 li{background:#f90;}
+.demo-7 li[class~='list']{background:#f90;}
+</style>
+<ol class="demo-7">
+	<li class="list1 list"></li>
+	<li class="list2"></li>
+	<li class="list list2"></li>
+	<li class="list"></li>
+</ol>
+
+
+<pre>
+<var>IE7+</var> E[att|="val"]  选择具有att属性且属性值为以val开头并用连接符"-"分隔的字符串的E元素。
+</pre>
+<style>
+.demo-8{border:1px solid black;padding:10px;}
+.demo-8 li{background:#7c1;}
+.demo-8 li[class|='bb']{background:#f90;}
+</style>
+<ol class="demo-8">
+	<li class="aa-1"></li>
+	<li class="bb-2"></li>
+	<li class="cc-3"></li>
+</ol>
+
+
+<pre>
+<var>IE7+</var> E[att^="val"]  选择具有att属性且属性值为以val开头的字符串的E元素。
+</pre>
+<style>
+.demo-9{border:1px solid black;padding:10px;}
+.demo-9 li{background:#369;}
+.demo-9 li[class^='a']{background:#f90;}
+</style>
+<ol class="demo-9">
+	<li class="aa-1"></li>
+	<li class="abb-2"></li>
+	<li class="bcc-3"></li>
+</ol>
+
+
+<pre>
+<var>IE7+</var> E[att$="val"]  选择具有att属性且属性值为以val开头的字符串的E元素。
+</pre>
+<style>
+.demo-10{border:1px solid black;padding:10px;}
+.demo-10 a{border:1px solid #f90;padding:10px;display: inline-block;}
+.demo-10 a[href$='exe']{background:yellow;}
+</style>
+<div class="demo-10">
+	<a href="aa.ftp"></a>
+	<a href="aa.html"></a>
+	<a href="aa.exe">这些a标签是 href 以exe为结尾</a>
+	<a href="aa.exe">这些a标签是 href 以exe为结尾</a>
+</div>
+
+
+<pre>
+<var>IE7+</var> E[att*="val"]  选择具有att属性且属性值为包含val的字符串的E元素。
+</pre>
+<style>
+.demo-11{border:1px solid black;padding:10px;}
+.demo-11 span{border:2px solid #369;padding:8px;display: inline-block;}
+.demo-11 span[title*='a']{background:yellow;}
+</style>
+<div class="demo-11">
+	<span title="abc">这些span标签的title里含有字母 a </span>
+	<span title="acc">这些span标签的title里含有字母 a </span>
+	<span title="ddd"></span>
+	<span title="bcd"></span>
+	<span title="adc">这些span标签的title里含有字母 a </span>
+	<span title="bb"></span>
+</div>
+
+
+
+
+<pre><var>IE8+</var>  
+E::before    设置在对象前（依据对象树的逻辑结构）发生的内容。用来和content属性一起使用
+E::after    设置在对象后（依据对象树的逻辑结构）发生的内容。用来和content属性一起使用
+</pre>
+<style>
+.demo-1{border:1px solid black;padding:10px;}
+.demo-1:before{content:'before';display:inline-block;padding:10px;background:#7c1;}
+.demo-1:after{content:'after';display:inline-block;padding:10px;background:#f90;}
+</style>
+<div class="demo-1"></div>
+
+
+<pre>
+<var>IE8+</var> 伪类选择符：E:focus
+</pre>
+<style>
+.demo-12{border:1px solid black;padding:10px;}
+.demo-12 input{border:3px solid #333;outline: none;}
+.demo-12 input:focus{border-color:#f00;}
+</style>
+<div class="demo-12">
+	<input type="text">
+	<input type="text">
+	<input type="text">
+</div>
+
+
+<pre>
+<var>IE9+</var> 伪类选择符：E:not(s)   匹配不包含s选择符的元素   <mark>IE9+ CSS3</mark>
+</pre>
+<style>
+.demo-13{border:1px solid black;padding:10px;}
+.demo-13 input{border-width:3px;outline: none;}
+.demo-13 input:not(#a){border-color:#f90;}
+</style>
+<div class="demo-13">
+	<input type="text" class="a">
+	<input type="text" id="a">
+	<input type="text">
+</div>
+
+
+
+<pre>
+<var>IE9+</var> E:last-child   匹配父元素的最后一个子元素E。
+</pre>
+<style>
+.demo-15{border:1px solid black;padding:10px;}
+.demo-15 input{border-width:3px;outline: none;}
+.demo-15 input:last-child{border-color:#f00;}
+</style>
+<div class="demo-15">
+  <input type="text">
+  <input type="text">
+  <input type="text">
+</div>
+
+
+
+
+<pre>
+<var>IE9+</var> E:only-child   匹配父元素仅有的一个子元素E。
+</pre>
+<style>
+.demo-16{border:1px solid black;padding:10px;}
+.demo-16 input:only-child{border:3px solid #f00;}
+</style>
+<div class="demo-16">
+  <span><input type="text"></span>
+  <span>
+    <input type="text">
+    <input type="text">
+  </span>
+</div>
+
+
+
+<pre>
+<var>IE9+</var> E:nth-child (odd/even)  匹配父元素的第n个子元素E(从1开始)。
+</pre>
+<style>
+.demo-17{border:1px solid black;padding:10px;}
+.demo-17 input{border-width:3px;outline: none;}
+.demo-17 input:nth-child(odd){border-color:#f00;}
+</style>
+<div class="demo-17">
+  <input type="text">
+  <input type="text">
+  <input type="text">
+</div>
+
+
+
+<pre>
+<var>IE9+</var> E:nth-last-child(n)   匹配父元素的倒数第n个子元素E。
+</pre>
+<style>
+.demo-18{border:1px solid black;padding:10px;}
+.demo-18 input{border-width:3px;outline: none;}
+.demo-18 input:nth-last-child(2){border-color:#f00;}
+</style>
+<div class="demo-18">
+  <input type="text">
+  <input type="text">
+  <input type="text">
+</div>
+
+
+<pre>
+<var>IE9+</var> E:first-of-type    匹配同类型中的第一个同级兄弟元素E。
+</pre>
+<style>
+.demo-19{border:1px solid black;padding:10px;}
+.demo-19 input{border-width:3px;outline: none;}
+.demo-19 input:first-of-type{border-color:#f00;}
+</style>
+<div class="demo-19">
+  <p>段落</p>
+  <p>段落</p>
+  <input type="text">
+  <input type="text">
+  <input type="text">
+</div>
+
+
+
+<pre>
+<var>IE9+</var> E:last-of-type    匹配同类型中的最后一个同级兄弟元素E。
+</pre>
+<style>
+.demo-20{border:1px solid black;padding:10px;}
+.demo-20 input{border-width:3px;outline: none;}
+.demo-20 p:last-of-type{background:#f00;}
+</style>
+<div class="demo-20">
+  <p>段落</p>
+  <p>段落</p>
+  <input type="text">
+  <input type="text">
+  <input type="text">
+</div>
+
+
+<pre>
+<var>IE9+</var> E:only-of-type    匹配同类型中的唯一的一个同级兄弟元素E。
+</pre>
+<style>
+.demo-21{border:1px solid black;padding:10px;}
+.demo-21 input{border-width:3px;outline: none;}
+.demo-21 span:only-of-type{display:inline-block;padding:20px;background:#f90;}
+.demo-21 input:only-of-type{display:inline-block;padding:20px;background:#f90;}
+</style>
+<div class="demo-21">
+  <p><span></span><span></span><input type="text"></p>
+  <p><span></span><span></span><input type="text"><input type="text"></p>
+  <p><span></span><input type="text"><input type="text"></p>
+</div>
+
+
+
+<pre>
+<var>IE9+</var> E:nth-of-type(n)    匹配同类型中的第n个同级兄弟元素E。
+</pre>
+<style>
+.demo-22{border:1px solid black;padding:10px;}
+.demo-22 input{border-width:3px;outline: none;}
+.demo-22 p:nth-of-type(1){background:#f00;}
+</style>
+<div class="demo-22">
+  <p>段落</p>
+  <p>段落</p>
+  <input type="text">
+  <input type="text">
+  <input type="text">
+</div>
+
+
+
+<pre>
+<var>IE9+</var> E:nth-last-of-type(n)    匹配同类型中的倒数第n个同级兄弟元素E。
+</pre>
+<style>
+.demo-23{border:1px solid black;padding:10px;}
+.demo-23 input{border-width:3px;outline: none;}
+.demo-23 input:nth-last-of-type(1){background:#f00;}
+</style>
+<div class="demo-23">
+  <p>段落</p>
+  <input type="text">
+  <input type="text">
+  <input type="text">
+</div>
+
+
+
+<pre>
+<var>IE9+</var> E:empty  匹配没有任何子元素（包括text节点）的元素E。
+</pre>
+<style>
+.demo-24{border:1px solid black;padding:10px;}
+.demo-24 p:empty{background:#f90;padding:10px;}
+</style>
+<div class="demo-24">
+  <p>段落</p>
+  <p></p>
+  <p><input type="text"></p>
+  <p></p>
+</div>
+
+
+
+<pre>
+<var>IE9+</var> E:checked    匹配用户界面上处于选中状态的元素E。(用于input type为radio与checkbox时)
+</pre>
+<style>
+.demo-25{border:1px solid black;padding:10px;}
+.demo-25 input{border-width:3px;outline: none;}
+.demo-25 input:checked+span{display:inline-block;padding:10px;background:#f90;}
+</style>
+<div class="demo-25">
+  <input type="checkbox"><span></span>
+  <input type="checkbox" checked="true"><span></span>
+  <input type="checkbox"><span></span>
+</div>
+
+
+
+
+<pre>
+<var>IE9+</var> E:enabled    匹配用户界面上处于可用状态的元素E。
+</pre>
+<style>
+.demo-26{border:1px solid black;padding:10px;}
+.demo-26 input{border-width:3px;outline: none;}
+.demo-26 input:enabled{background:#f90;}
+</style>
+<div class="demo-26">
+  <input type="text"><span></span>
+  <input type="text" disabled><span></span>
+  <input type="text" disabled><span></span>
+</div>
+
+
+
+
+<pre>
+<var>IE9+</var> E:disabled   匹配用户界面上处于禁用状态的元素E。
+</pre>
+<style>
+.demo-27{border:1px solid black;padding:10px;}
+.demo-27 input{border-width:3px;outline: none;}
+.demo-27 input:disabled{background:#f90;}
+</style>
+<div class="demo-27">
+  <input type="text"><span></span>
+  <input type="text" ><span></span>
+  <input type="text" disabled><span></span>
+</div>
+
+
+
+
+
+<pre>
+<var>IE9+</var> E:target  匹配相关URL指向的E元素。（锚点页面跳转了也好使）
+</pre>
+<style>
+.demo-28{border:1px solid black;padding:10px;}
+.demo-28 span{display: inline-block;padding:10px;border:1px solid red;}
+.demo-28 #b:target,.demo-28 #a:target{background:#f90;}
+</style>
+<div class="demo-28">
+  <a href="#a" class="link1">link1</a><span id="a"></span>
+  <a href="#b">link2</a><span id="b"></span>
+  <a href="#c">link3</a><span id="c"></span>
+</div>
+
+
+
+<pre>
+<var>IE9+</var> E::selection   设置对象被选择时的样式（FF需要加内核前缀）
+</pre>
+<style>
+.demo-31{border:1px solid black;padding:10px;}
+.demo-31 p::selection{background:#f90;}
+.demo-31 div::-moz-selection{background:#7c1;}
+</style>
+<div class="demo-31">
+  <p>E::selection   设置对象被选择时的样式（FF需要加内核前缀）</p>
+  <div>E::selection   设置对象被选择时的样式（FF需要加内核前缀）</div>
+  <div>E::selection   设置对象被选择时的样式（FF需要加内核前缀）</div>
+  <p>E::selection   设置对象被选择时的样式（FF需要加内核前缀）</p>
+  <p>E::selection   设置对象被选择时的样式（FF需要加内核前缀）</p>
+</div>
+
+
+
+</body>
+</html>
+
+

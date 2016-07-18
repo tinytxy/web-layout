@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title></title>
+<!--#set var='compatible' value=''-->
+<meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
+<link rel="icon" href="http://core.pc.lietou-static.com/revs/images/common/favicon_c19cd042.ico" type="image/x-icon" />
+<script>
+function FileManagerClass(){return this.root="http://s.lietou-static.com/",this.base="http://core.pc.lietou-static.com",this.cache={},this.alis={},this.init(),this}FileManagerClass.prototype.init=function(){return document.write(unescape('%3Cscript src="'+this.base+'/js/common/cdntest.js" type="text/javascript"%3E%3C/script%3E')),this},FileManagerClass.prototype.fetchCDN=function(){return this},FileManagerClass.prototype.extname=function(t){return(/(\.[^\\\/\.]+)$/g.exec(t)||[0,""])[1]},FileManagerClass.prototype.prefix=function(t){var e=this;return t=t.replace(/^\//,this.root),t.replace(/https?:\/\/(.*)\.lietou-static\.com/,function(t,s){return e.alis[s]===!1?"s"===s?t.replace(s,"i."+s):t.replace(".pc.",".ipc."):t})},FileManagerClass.prototype.get=function(){var t,e,s,i=arguments;for(s=0;s<i.length;s++)e=this.prefix(i[s]),this.cache[e]||(this.cache[e]=!0,t=this.extname(e),".css"===t?document.write(unescape('%3Clink href="'+e+'" rel="stylesheet" type="text/css"/%3E')):".js"===t&&document.write(unescape('%3Cscript src="'+e+'"%3E%3C/script%3E')));return this};var FileManager=new FileManagerClass;
+</script>
+<!--[if lt IE 9]>
+<script type="text/javascript">FileManager.get('http://core.pc.lietou-static.com/revs/js/common/html5shiv_62ac5721.js');</script>
+<![endif]-->
+<!--[if IE 6]>
+<script type="text/javascript">FileManager.get('http://core.pc.lietou-static.com/revs/js/common/DD_belatedPNG_849d7004.js');</script>
+<script>DD_belatedPNG.fix('.pngfix');</script>
+<![endif]-->
+<script>
+FileManager.get('http://core.pc.lietou-static.com/revs/css/port/article/common_f6624825.css','http://article.pc.lietou-static.com/revs/v1/css/public_8d50e360.css');
+</script>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<style>
+p{
+  height: 30px;
+}
+  .parent{
+    border:1px solid black; width: 800px;
+    margin:50px auto;
+    overflow: hidden;
+  }
+  .parent:after{
+    content: '';
+    display: block;
+    clear: both;
+  }
+  .left{
+    width: 200px;background:#f90;min-height: 200px;float: left;
+  padding-bottom: 1000px;
+  margin-bottom: -1000px;
+  }
+  .right{
+    width: 500px;background:#7c1;min-height: 200px;float: right;
+  padding-bottom: 1000px;
+  margin-bottom: -1000px;
+  }
+</style>
+<div class="parent">
+  <div class="left"></div>
+  <div class="right">
+    <p>test01</p>
+    <p>test02</p>
+    <p>test03</p>
+    <p>test04</p>
+    <p>test05</p>
+    <p>test06</p>
+    <p>test07</p>
+    <p>test08</p>
+    <p>test09</p>
+    <p>test10</p>
+  </div>
+</div>
+</body>
+</html>
+
+
+
+
+
+

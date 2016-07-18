@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title></title>
+<!--#set var='compatible' value=''-->
+<meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
+<script>
+function FileManagerClass(){return this.root="http://s.lietou-static.com/",this.base="http://core.pc.lietou-static.com",this.cache={},this.alis={},this.init(),this}FileManagerClass.prototype.init=function(){return document.write(unescape('%3Cscript src="'+this.base+'/js/common/cdntest.js" type="text/javascript"%3E%3C/script%3E')),this},FileManagerClass.prototype.fetchCDN=function(){return this},FileManagerClass.prototype.extname=function(t){return(/(\.[^\\\/\.]+)$/g.exec(t)||[0,""])[1]},FileManagerClass.prototype.prefix=function(t){var e=this;return t=t.replace(/^\//,this.root),t.replace(/https?:\/\/(.*)\.lietou-static\.com/,function(t,s){return e.alis[s]===!1?"s"===s?t.replace(s,"i."+s):t.replace(".pc.",".ipc."):t})},FileManagerClass.prototype.get=function(){var t,e,s,i=arguments;for(s=0;s<i.length;s++)e=this.prefix(i[s]),this.cache[e]||(this.cache[e]=!0,t=this.extname(e),".css"===t?document.write(unescape('%3Clink href="'+e+'" rel="stylesheet" type="text/css"/%3E')):".js"===t&&document.write(unescape('%3Cscript src="'+e+'"%3E%3C/script%3E')));return this};var FileManager=new FileManagerClass;
+</script>
+<!--[if lt IE 9]>
+<script type="text/javascript">FileManager.get('http://core.pc.lietou-static.com/revs/js/common/html5shiv_62ac5721.js');</script>
+<![endif]-->
+<!--[if IE 6]>
+<script type="text/javascript">FileManager.get('http://core.pc.lietou-static.com/revs/js/common/DD_belatedPNG_849d7004.js');</script>
+<script>DD_belatedPNG.fix('.pngfix');</script>
+<![endif]-->
+<script>
+FileManager.get('http://core.pc.lietou-static.com/revs/css/port/article/common_f6624825.css','http://article.pc.lietou-static.com/revs/v1/css/public_8d50e360.css');
+</script>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+<style>
+.section{
+  width:980px;
+  margin: 50px auto;
+  background-color:rgba(0,0,0,.3);
+  overflow: hidden;
+}
+.list{
+  width:1000px;
+  margin:-1px 0 0 -1px;
+}
+.list li{
+  border-top:1px dotted black;
+  padding:20px 0 20px;
+  width:250px;
+  float: left;
+}
+.list li div{
+  padding:0  30px;
+  border-left:1px solid red;
+  height:242px;
+  font-size:30px;
+}
+
+</style>
+
+<div class="section">
+  <ul class="list clearfix">
+    <li>
+      <div>1</div>
+    </li>
+    <li>
+      <div>2</div>
+    </li>
+    <li>
+      <div>3</div>
+    </li>
+    <li>
+      <div>4</div>
+    </li>
+    <li>
+      <div>5</div>
+    </li>
+    <li>
+      <div>6</div>
+    </li>
+    <li>
+      <div>7</div>
+    </li>
+    <li>
+      <div>8</div>
+    </li>
+  </ul>
+</div>
+</body>
+</html>
+
+
+
+
+
+
